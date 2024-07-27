@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>python.openpyxl操作excel | CowanNath</title>
+  <title>Hello World | CowanNath</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog">
@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
 
-  <link rel="canonical" href="https://cowannath.github.io/2024/07/27/python.openpyxl%E6%93%8D%E4%BD%9Cexcel/">
+  <link rel="canonical" href="https://cowannath.github.io/2024/07/23/hello-world/">
 
   <link rel="shortcut icon" href="/">
 
@@ -25,18 +25,17 @@
 
 
   
-  <meta name="description" content="openpyxl操作excel一、workbook操作 workbook： 工作簿，一个excel文件包含多个sheet。 加载一个已有的excel：     excel &#x3D; openpyxl.load_workbook(&quot;.&#x2F;test.xlsx&quot;) 创建一个新的excel：     excel &#x3D; openpyxl.Workbook() 最后都要save一下：     exc">
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python.openpyxl操作excel">
-<meta property="og:url" content="https://cowannath.github.io/2024/07/27/python.openpyxl%E6%93%8D%E4%BD%9Cexcel/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="https://cowannath.github.io/2024/07/23/hello-world/index.html">
 <meta property="og:site_name" content="CowanNath">
-<meta property="og:description" content="openpyxl操作excel一、workbook操作 workbook： 工作簿，一个excel文件包含多个sheet。 加载一个已有的excel：     excel &#x3D; openpyxl.load_workbook(&quot;.&#x2F;test.xlsx&quot;) 创建一个新的excel：     excel &#x3D; openpyxl.Workbook() 最后都要save一下：     exc">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-07-27T01:44:23.000Z">
-<meta property="article:modified_time" content="2024-07-27T07:56:20.134Z">
+<meta property="article:published_time" content="2024-07-23T02:19:24.806Z">
+<meta property="article:modified_time" content="2024-07-27T07:55:52.611Z">
 <meta property="article:author" content="CowanNath">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="openpyxl">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
 
   <style>
@@ -101,71 +100,32 @@
   <main id="sea-main-wrapper">
     <article class="sea-page-card-wrapper">
   <header class="sea-article-header">
-    <h1 class="sea-article-title">python.openpyxl操作excel</h1>
+    <h1 class="sea-article-title">Hello World</h1>
     
       <div class="sea-post-meta sea-post-meta__center">
         <div class="sea-post-time">
   <i class="sea-font">date</i>
-  <time datetime="2024-07-27T01:44:23.000Z">2024-07-27</time>
+  <time datetime="2024-07-23T02:19:24.806Z">2024-07-23</time>
 </div>
         
-  <div class="sea-post-categories">
-    <i class="sea-font">folder</i>
-    <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/">技术相关</a>
-  </div>
-
         
-  <div class="sea-post-tags">
-    <i class="sea-font">tag</i>
-    <a class="tag-link" href="/tags/openpyxl/" rel="tag">openpyxl</a> , <a class="tag-link" href="/tags/python/" rel="tag">python</a>
-  </div>
-
       </div>
     
   </header>
   <div class="sea-article-content sea-doc">
-    <h1 id="openpyxl操作excel"><a href="#openpyxl操作excel" class="headerlink" title="openpyxl操作excel"></a>openpyxl操作excel</h1><p>一、workbook操作</p>
-<pre><code>workbook： 工作簿，一个excel文件包含多个sheet。
-加载一个已有的excel：
-    excel = openpyxl.load_workbook(&quot;./test.xlsx&quot;)
-创建一个新的excel：
-    excel = openpyxl.Workbook()
-最后都要save一下：
-    excel.save(file_path)
-</code></pre>
-<p>二、sheet操作</p>
-<pre><code>workbook： 工作表，一个workbook有多个，表名识别，如“sheet1”,“sheet2”等。
-增
-    ws = wb.create_sheet(&quot;Mysheet&quot;) #插入到最后(default)
-    ws = wb.create_sheet(&quot;Mysheet&quot;, 0) #插入到最开始的位置
-    ws = wb.create_sheet(title=&quot;Pip&quot;)
-改
-    ws.title = &quot;New Title&quot; # 修改表名称
-查
-    激活工作表:
-    ws = wb.active
-    ws = wb[&quot;frequency&quot;] 
-    读取所有sheet名字
-    wb.sheetnames
-</code></pre>
-<p>三、单元格</p>
-<pre><code>cell： 单元格，存储数据对象
-增
-    写入数据操作的三种方式
-    ws.cell(row=2,column=5).value=99
-    ws.cell(row=3,column=5,value=100)
-    ws[&#39;A4&#39;] = 4 
-改 重写和增相同
-查
-    # 读取单元格数据
-    ws.cell(row=row,column=col).value
-    ws[&#39;D1&#39;].value 
+    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-    ws.max_row     # 获取行数
-    ws.max_column  # 获取列数
-</code></pre>
-<p>wb &#x3D; work_book<br>ws &#x3D; work_sheet</p>
-<p>参考链接：<br><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1626444772510647388&wfr=spider&for=pc">Python利用openpyxl处理Excel文件（单元格及行列具体操作）</a>		</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
   </div>
 
@@ -173,13 +133,13 @@
     
   <div class="sea-prev-next-wrapper">
     
-    
-      <div class="next">
-        <a class="link" href="/2024/07/26/Sublime-Text3%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/">
-          Sublime Text3快捷键大全
+      <div class="prev">
+        <span>←</span>
+        <a class="link" href="/2024/07/24/Markdown%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+          Markdown日常使用方法
         </a>
-        <span>→</span>
       </div>
+    
     
   </div>
 
